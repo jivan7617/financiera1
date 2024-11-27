@@ -21,6 +21,7 @@ public class PersonaService {
         }
     }
     public List<Persona> consultarPersona(){
+
         return personaRepository.findAll();
     }
 }
