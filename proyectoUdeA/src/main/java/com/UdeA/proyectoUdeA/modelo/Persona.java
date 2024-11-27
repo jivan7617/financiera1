@@ -1,16 +1,13 @@
 package com.UdeA.proyectoUdeA.modelo;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "persona")
 public class Persona {
     @Id
     @Column(nullable = false,length = 10)
-    private String documento;
+    private String idPersona;
 
     @Column(length =10, name = "primer nombre",nullable = false)
     private String primerNombre;
@@ -27,32 +24,25 @@ public class Persona {
     @Column(length =10, name = "telefono")
     private String telefono;
 
-    @Column(length = 50, unique = true)
-    private String email;
+    public Persona() {}
 
-    public Persona() {
-
-    }
-
-    public Persona(String documento, String primerNombre,
+    public Persona(String idPersona, String primerNombre,
                    String segundoNombre, String primerApellido,
-                   String segundoApellido, String telefono,
-                   String email) {
-        this.documento = documento;
+                   String segundoApellido, String telefono) {
+        this.idPersona = idPersona;
         this.primerNombre = primerNombre;
         this.segundoNombre = segundoNombre;
         this.primerApellido = primerApellido;
         this.segundoApellido = segundoApellido;
         this.telefono = telefono;
-        this.email = email;
     }
 
-    public String getDocumento() {
-        return documento;
+    public String getIdPersona() {
+        return idPersona;
     }
 
-    public void setDocumento(String documento) {
-        this.documento = documento;
+    public void setIdPersona(String idPersona) {
+        this.idPersona = idPersona;
     }
 
     public String getPrimerNombre() {
@@ -93,13 +83,5 @@ public class Persona {
 
     public void setTelefono(String telefono) {
         this.telefono = telefono;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
     }
 }
