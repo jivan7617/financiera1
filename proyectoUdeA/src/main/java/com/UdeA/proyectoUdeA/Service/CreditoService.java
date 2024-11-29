@@ -16,7 +16,7 @@ public class CreditoService {
 
     }
 
-    public Credito getCredito(Credito credito) {
+    public Credito insertarCredito(Credito credito) {
         try {
             return creditoRepository.save(credito);
         } catch (Exception e) {
