@@ -12,12 +12,12 @@ public class RequisitoCreditoService {
     public RequisitoCreditoService(RequisitosCreditoRepository requisitoCRepository) {
         this.requisitoCRepository = requisitoCRepository;
     }
-    public RequisitosCredito insertarRequisitoCredito(RequisitosCredito persona) {
+    public RequisitosCredito insertarRequisitoCredito(RequisitosCredito requisitosCredito) {
         try{
-            return requisitoCRepository.save(persona);
-        }catch(Exception error){
-            error.printStackTrace();
-            throw new RuntimeException("Error al insertar persona");
+            return requisitoCRepository.save(requisitosCredito);
+        }catch(Exception e){
+            e.printStackTrace();
+            throw new RuntimeException("Error al insertar requisito credito");
         }
     }
     public List<RequisitosCredito> consultarRequisitoCredito(){
