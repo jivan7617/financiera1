@@ -12,25 +12,24 @@ public class Usuario {
 
     @OneToOne
     @MapsId
-    @JoinColumn(name = "documento")
+    @JoinColumn(name="idPersona")
     private Persona persona;
+
+
 
     public Usuario() {}
 
-    public Usuario(String correo, String nombreUsuario, String contrasena, Persona persona) {
+    public Usuario(String correo, String nombreUsuario,
+                   String contrasena, Persona persona) {
         Correo = correo;
         this.nombreUsuario = nombreUsuario;
         this.contrasena = contrasena;
         this.persona = persona;
     }
 
-    public String getCorreo() {
-        return Correo;
-    }
+    public String getCorreo() {return Correo;}
 
-    public void setCorreo(String correo) {
-        Correo = correo;
-    }
+    public void setCorreo(String correo) {this.Correo = correo;}
 
     public String getNombreUsuario() {
         return nombreUsuario;

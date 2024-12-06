@@ -24,17 +24,23 @@ public class Persona {
     @Column(length =10, name = "telefono")
     private String telefono;
 
+    @OneToOne
+    @MapsId
+    @JoinColumn(name = "Correo")
+    private Usuario usuario;
+
     public Persona() {}
 
-    public Persona(String idPersona, String primerNombre,
-                   String segundoNombre, String primerApellido,
-                   String segundoApellido, String telefono) {
+    public Persona(String idPersona, String primerNombre, String segundoNombre,
+                   String primerApellido, String segundoApellido, String telefono,
+                   Usuario usuario) {
         this.idPersona = idPersona;
         this.primerNombre = primerNombre;
         this.segundoNombre = segundoNombre;
         this.primerApellido = primerApellido;
         this.segundoApellido = segundoApellido;
         this.telefono = telefono;
+        this.usuario = usuario;
     }
 
     public String getIdPersona() {
@@ -83,5 +89,13 @@ public class Persona {
 
     public void setTelefono(String telefono) {
         this.telefono = telefono;
+    }
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
     }
 }
