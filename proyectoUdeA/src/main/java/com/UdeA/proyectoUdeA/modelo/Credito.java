@@ -5,13 +5,13 @@ import java.time.LocalDate;
 
 @Entity
 public class Credito {
-    @Id
-    private int idCredito;
 
     @ManyToOne
     @JoinColumn(name = "idpersona", referencedColumnName = "idpersona")
     private Persona idpersona;
 
+    @Id
+    private int idCredito;
     private double montoCredito;
     private int plazoCredito;
     private double tasaInteres;
