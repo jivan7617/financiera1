@@ -16,8 +16,8 @@ public class CreditoControler {
     public CreditoControler(CreditoService creditoService) {
         this.creditoService = creditoService;
     }
-
-    @PostMapping("/insertarCredito")
+@RequestMapping("/credito")
+    @PostMapping
     public Credito insertarCredito(@RequestBody Credito credito) {
         try {
             return creditoService.insertarCredito(credito);
@@ -26,7 +26,7 @@ public class CreditoControler {
         }
     }
 
-    @GetMapping("/consultarCredito")
+    @GetMapping
     public List<Credito> consultarCredito() {
         try {
             return creditoService.consultarCredito();

@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@RequestMapping("/persona")
 @CrossOrigin(origins = "http://localhost:5173")
 public class PersonControler {
     private final PersonaService personaService;
@@ -15,7 +16,7 @@ public class PersonControler {
     public PersonControler(PersonaService personaService) {
         this.personaService = personaService;
     }
-    @PostMapping("/insertarP")
+    @PostMapping
     public Persona insertarP(@RequestBody Persona persona){
         try{
             return personaService.insertarPersona(persona);
@@ -24,7 +25,7 @@ public class PersonControler {
         }
     }
 
-    @GetMapping("/consultarP")
+    @GetMapping
     public List<Persona> consultarPersona() {
         try {
             return personaService.consultarPersona();
