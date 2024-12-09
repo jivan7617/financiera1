@@ -34,4 +34,15 @@ public class PersonControler {
         }
     }
 
+    @GetMapping("{primerNombre}")
+    public  List<Persona> consultarPorPrimerNombre(@PathVariable String primerNombre) {
+        return personaService.consultarPersonaPorprimerNombre(primerNombre);
+    }
+    @GetMapping("/{telefono}")
+    public List<Persona> consultarPorTelefono(@PathVariable String telefono) {
+        return personaService.consultarPersonaPorTelefono(telefono);
+    }
+
+
+
 }
