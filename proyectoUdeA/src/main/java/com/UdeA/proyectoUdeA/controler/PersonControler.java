@@ -34,4 +34,9 @@ public class PersonControler {
         }
     }
 
+    @GetMapping("{primerNombre}")
+    public  List<Persona> consultarPorPrimerNombre(@PathVariable String primerNombre) {
+        return personaService.consultarPersonaPorprimerNombre(primerNombre);
+    }
+
 }

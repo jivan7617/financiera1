@@ -27,5 +27,9 @@ public class PersonaService {
     public List<Persona> consultarPersona(){
         return personaRepository.findAll();
     }
+    public  List<Persona> consultarPersonaPorprimerNombre(String primerNombre){
+        return personaRepository.findByprimerNombre(primerNombre);
+    }
+
 
 }
