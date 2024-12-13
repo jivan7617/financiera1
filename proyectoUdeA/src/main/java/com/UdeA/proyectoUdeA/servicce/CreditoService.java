@@ -28,5 +28,17 @@ public class CreditoService {
     public List<Credito> consultarCredito(){
         return creditoRepository.findAll();
     }
+    public Credito ActualizarCredito(int idCredito, Credito credito) {
+        Credito creditoActual = creditoRepository.findById(idCredito).orElse(null);
+        if (creditoActual == null) {
+            throw new RuntimeException("Credito no encontrado");
+        }
+        creditoActual.setMontoCredito(credito.getMontoCredito());
+        creditoActual.setPlazoCredito(credito.getPlazoCredito());
+        creditoActual.setTasaInteres(credito.getTasaInteres());
+        creditoActual.setFechaCredito(credito.getFechaCredito());
+
+        return creditoRepository.save(creditoActual);
+    }
 
 }

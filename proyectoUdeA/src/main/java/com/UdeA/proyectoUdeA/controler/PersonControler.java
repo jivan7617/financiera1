@@ -3,6 +3,7 @@ package com.UdeA.proyectoUdeA.controler;
 import com.UdeA.proyectoUdeA.modelo.Credito;
 import com.UdeA.proyectoUdeA.modelo.Persona;
 import com.UdeA.proyectoUdeA.servicce.PersonaService;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -34,14 +35,28 @@ public class PersonControler {
         }
     }
 
-    @GetMapping("{primerNombre}")
+    /*@GetMapping("{primerNombre}")
     public  List<Persona> consultarPorPrimerNombre(@PathVariable String primerNombre) {
-        return personaService.consultarPersonaPorprimerNombre(primerNombre);
-    }
-    @GetMapping("/{telefono}")
+        try {
+            return personaService.consultarPersonaPorprimerNombre(primerNombre);
+        } catch (RuntimeException e) {
+            throw new RuntimeException("error al consultar por nombre", e);
+        }
+    }*/
+    /*@GetMapping("/{telefono}")
     public List<Persona> consultarPorTelefono(@PathVariable String telefono) {
         return personaService.consultarPersonaPorTelefono(telefono);
-    }
+    }*/
+
+    /*@DeleteMapping("/{idPersona}")
+    public void eliminarPersona(@PathVariable String idPersona) {
+        try{
+            personaService.borrarPersona(idPersona);
+            return "datos persona eliminados por " + idPersona;
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }*/
 
 
 

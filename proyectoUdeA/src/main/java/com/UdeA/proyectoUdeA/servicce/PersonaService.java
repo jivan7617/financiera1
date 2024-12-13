@@ -27,13 +27,20 @@ public class PersonaService {
     public List<Persona> consultarPersona(){
         return personaRepository.findAll();
     }
-    public  List<Persona> consultarPersonaPorprimerNombre(String primerNombre){
+    /*public  List<Persona> consultarPersonaPorprimerNombre(String primerNombre){
         return personaRepository.findByprimerNombre(primerNombre);
     }
 
     public  List<Persona> consultarPersonaPorTelefono(String telefono){
         return personaRepository.findBytelefono(telefono);
     }
+
+    public void borrarPersona(String idPersona){
+        Persona personaRegistrada = personaRepository.findById(idPersona).orElseThrow(()-> new RuntimeException("la persona no esta registrada"));
+        personaRepository.delete(personaRegistrada);
+    }
+    */
+
 
 
 
